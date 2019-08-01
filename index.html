@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Plugin-Gallery</title>
+
+	<!-- This is a three code to get and put in the your head -->
+	<link rel="stylesheet" href="css/lightbox.min.css">
+	<script src="js/lightbox-plus-jquery.min.js"></script>
+	<script src="js/jquery-3.4.1.min.js"></script>
+</head>
+<body>		
+        <!-- This is a CSS for copy -->
+		<style type="text/css">
+			body{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-family: arial, 'calibri', 'lato', 'roboto';
+				padding: 40px;
+			}
+			.first{
+				overflow: hidden;
+			}
+			.first img{
+				width: 309px;
+			}
+			#gl{
+				width:250px;
+				height: 200px;
+				display: flex;
+			}
+			.img, .imgDois, .imgTres{
+				margin: 1px;
+				height: 100px;
+			}
+			.img img, .imgDois img, .imgTres img{
+				width:100px;
+				cursor: pointer;
+			}
+			.img:hover, .imgDois:hover, .imgTres:hover{
+				opacity: 0.7;
+			}
+		</style>
+
+
+<!-- This a first container -->
+ <div id="container">
+   <div class="first"><a href="img/image-1.jpg" id="change" data-lightbox="mygallery"><img src="img/image-1.jpg" class="img-f"></a></div>
+
+   <div id="gl">
+    <div class="img" onclik="img()"><img src="img/image-2.jpg"></div>
+    <div class="imgDois" onclik="imgDois()"><img src="img/image-3.jpg"></div>
+    <div class="imgTres" onclik="imgTres()"><img src="img/image-1.jpg"></div>
+   </div>
+ </div>
+
+
+   <!-- This is a pure JS -->
+   <script type="text/javascript">
+   	  let first = document.querySelector('.img-f')
+   	  let img = document.querySelector('.img')
+   	  let imgDois = document.querySelector('.imgDois')
+   	  let imgTres = document.querySelector('.imgTres')
+	  let change = document.querySelector('#change')
+
+   	  img.addEventListener('click', ()=>{
+        first.setAttribute('src', 'img/image-2.jpg')
+		change.setAttribute('href', 'img/image-2.jpg')
+   	  })
+
+   	  imgDois.addEventListener('click', ()=>{
+        first.setAttribute('src', 'img/image-3.jpg')		
+		change.setAttribute('href', 'img/image-3.jpg')
+   	  })
+
+      imgTres.addEventListener('click', ()=>{
+        first.setAttribute('src', 'img/image-1.jpg')
+		change.setAttribute('href', 'img/image-1.jpg')
+   	  })
+
+   </script>
+</body>
+</html>
